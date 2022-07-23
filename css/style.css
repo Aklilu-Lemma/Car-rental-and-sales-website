@@ -111,6 +111,16 @@ section{
     color:var(--light-color);
 }
 
+#logout-btn .btn{
+    margin-top: 0;
+}
+
+#logout-btn i{
+    display: none;
+    font-size: 2.5rem;
+    color:var(--light-color);
+}
+
 .header.active{
     padding:2rem 9%;
     box-shadow: var(--box-shadow);
@@ -123,8 +133,8 @@ section{
 }
 
 .login-form-container{
-    position: fixed;
-    top:-105%; left:0;
+    /* position: relative; */
+    /* top:-105%; left:0; */
     height:100%;
     width:100%;
     display: flex;
@@ -132,18 +142,19 @@ section{
     justify-content: center;
     background:rgba(255,255,255,.9);
     z-index: 10000;
+    /* top:0; */
+    padding: 10rem;
 }
 
-.login-form-container.active{
-    top:0;
-}
+/* .login-form-container.active{
+} */
 
 .login-form-container form{
-    margin:2rem;
+    margin:5rem;
     text-align: center;
-    padding:2rem;
-    width:40rem;
-    border-radius: .5rem;
+    padding:5rem;
+    width:50rem;
+    border-radius: 1.5rem;
     box-shadow: var(--box-shadow);
     border:var(--border);
     background: #fff;
@@ -190,13 +201,6 @@ section{
     text-transform: uppercase;
 }
 
-.login-form-container #close-login-form{
-    position: absolute;
-    top:1.5rem; right:2.5rem;
-    font-size: 5rem;
-    color:var(--black);
-    cursor: pointer;
-}
 
 .home{
     padding-top: 10rem;
@@ -658,6 +662,13 @@ color: var(--yellow);
     }
 
     #login-btn i{
+        display: block;
+    }
+    #logout-btn .btn{
+        display: none;
+    }
+
+    #logout-btn i{
         display: block;
     }
 

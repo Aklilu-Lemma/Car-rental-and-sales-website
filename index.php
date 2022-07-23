@@ -1,3 +1,20 @@
+<?php
+
+include 'config.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+
+// if(!isset($user_id)){
+//    header('location:login.php');
+// };
+
+// if(isset($_GET['logout'])){
+//    unset($user_id);
+//    session_destroy();
+//    header('location:index.php');
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,10 +53,26 @@
 
     </nav>
 
-    <div id="login-btn">
-        <button class="btn">login</button>
+    <?php
+  if($_SESSION["loggedIn"] == "yes") { 
+      echo '<a href="logout.php"><div id="logout-btn">
+      <button class="btn">Logout</button>
+      <i class="far fa-sign-out"></i>
+  </div></a> ';
+  }
+  else{
+    echo '   <a href="login.php">  <div id="login-btn">
+    <button class="btn">login | register</button>
+    <i class="far fa-user"></i>
+</div> </a>';
+  }
+  ?>
+
+
+    <!-- <div id="login-btn">
+        <button class="btn">login | register</button>
         <i class="far fa-user"></i>
-    </div>
+    </div> -->
 
 </header>
 
@@ -47,23 +80,9 @@
 
 <!-- login form starts-->
 
-<div class="login-form-container">
-    <span class="fas fa-times" id="close-login-form"></span>
-    <form action="">
-        <h3>user login</h3>
-        <input type="email" name="email" id="email" class="box" placeholder="Email">
-        <input type="password" name="password" id="password" class="box" placeholder="Password">
-        <p>forget your password <a href="#">click here</a></p>
-        <input type="submit" value="login now" class="btn">
-        <p>or login with</p>
-        <div class="buttons">
-            <button class="btn">google</button>
-            <button class="btn">facebook</button>
-        </div>
-        <p>don't have an account <a href="#">create one</a></p>
 
-    </form>
-</div>
+    <span class="fas fa-times" id="close-login-form"></span>
+
 <!-- login form ends-->
 
 <!-- home section starts -->
